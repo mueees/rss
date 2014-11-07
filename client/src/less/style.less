@@ -1,0 +1,148 @@
+@import "import/font.less";
+@import "import/fontelo.less";
+@import "import/reset.less";
+@import "import/bootstrap.less";
+@import "import/variables.less";
+@import "import/typo.less";
+
+/*body style*/
+
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 250px;
+}
+
+.dark{
+  body {
+    background: @main-bg;
+    color: @main-color;
+    font-weight: 200;
+    font-size: @font-main;
+    line-height: 1.4;
+  }
+}
+
+/*RSS*/
+.rss-list{
+  .rss-title{
+    font-weight:500;
+    margin-bottom: 10px;
+  }
+  &.type-line{
+    .rss-post{
+
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+}
+.rss-post {
+  position: relative;
+  .time{
+    font-size: @font-small;
+  }
+
+  &.line{
+    position: relative;
+    padding: 0 0 10px;
+    border-bottom: 1px solid silver;
+    margin: 10px 0 0;
+
+    .content{
+      width: 100%;
+      padding-right: 70px;
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      text-overflow: ellipsis;
+    }
+
+    .time{
+      position: absolute;
+      right: 7px;
+      top: 3px;
+    }
+
+    &.unread{
+      .title{
+        font-weight: bold;
+      }
+    }
+  }
+}
+/*RSS END*/
+
+/*TOOLTIP*/
+.r-tooltip{
+
+  &:hover{
+    .r-tooltip-content{
+      opacity: 1;
+      -webkit-transform: translate3d(0,0,0) rotate3d(0,0,0,0);
+      transform: translate3d(0,0,0) rotate3d(0,0,0,0);
+    }
+  }
+
+  .r-tooltip-content {
+    position: absolute;
+    z-index: 9999;
+    width: 500px;
+    left: 50%;
+    margin: 0 0 20px -180px;
+    bottom: 100%;
+    text-align: left;
+    font-size: @font-small;
+    line-height: 1.4;
+    box-shadow: -5px -5px 15px rgba(48,54,61,0.2);
+    background: @second-bg;
+    opacity: 0;
+    cursor: default;
+    white-space: normal;
+
+    &:after{
+      content: '';
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: transparent;
+      border-top-color: @second-bg;
+      border-width: 10px;
+      margin-left: -10px;
+    }
+
+    .img{
+      float: left;
+      margin-right: 10px;
+      overflow: hidden;
+      background-size: cover;
+      width: 180px;
+      height: 170px;
+    }
+
+    .tooltip-text{
+      display: block;
+      padding: 10px;
+      color: @main-color;
+    }
+  }
+
+}
+.r-tooltip-effect-1 {
+  .r-tooltip-content{
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scale3d(0.7,0.3,1);
+    transform: scale3d(0.7,0.3,1);
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+}
+
+
+/*END TOOLTIP*/
