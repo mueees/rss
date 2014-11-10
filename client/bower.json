@@ -11,7 +11,8 @@
     "angular-touch": "1.2.1",
     "angular-gestures": "latest",
     "ngstorage": "~0.3.0",
-    "underscore" : "latest"
+    "underscore" : "latest",
+    "restangular" : "latest"
   },
   "dependencies": {}
 }

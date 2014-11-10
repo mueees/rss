@@ -1,0 +1,18 @@
+<nav class="menu">
+    <ul>
+        <li ng-class="{open: isOpen, feedActive: isFeedActive(category)}" class="category" ng-repeat="category in categories" category-item>
+            <a href="#" ng-click="categoryClick()">
+                <i class="icon-angle-right pull-right icon-toggle" ng-class="{active: !isOpen}"></i>
+                <i class="icon-angle-down pull-right icon-toggle" ng-class="{active: isOpen}"></i>
+                {{category.name}}
+            </a>
+            <ul class="feeds" ng-show="category.feeds.length">
+                <li ng-click="feedClick(feed._id)" ng-class="{active: isActive(feed._id)}" class="feed" ng-repeat="feed in category.feeds" >
+                    <a href="#/feed/{{feed._id}}">
+                        {{feed.name}}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

@@ -1,1 +1,53 @@
 @import "../../../vendor/bootstrap/less/bootstrap.less";
+
+
+// Extra-Large screen / wide desktop
+// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+@screen-eg:                  1400px;
+@screen-eg-min:              @screen-eg;
+@screen-eg-desktop:          @screen-eg-min;
+
+// Large screen / wide desktop
+@container-ex-desktop:      ((1340px + @grid-gutter-width));
+//** For `@screen-lg-min` and up.
+@container-ex:                 @container-ex-desktop;
+
+
+// Extra-Large screen / wide desktop
+// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+@screen-elg:                  1600px;
+@screen-elg-min:              @screen-elg;
+@screen-elg-desktop:          @screen-elg-min;
+
+// Large screen / wide desktop
+@container-elx-desktop:      ((1540px + @grid-gutter-width));
+//** For `@screen-lg-min` and up.
+@container-el:                 @screen-elg-desktop;
+
+
+.container {
+  .container-fixed();
+  @media (min-width: @screen-eg-min) {
+    width: @container-ex;
+  }
+  @media (min-width: @screen-elg-min) {
+    width: @container-el;
+  }
+
+}
+
+// Exx grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: @screen-eg-min) {
+  .make-grid(ex);
+}
+
+// Elx grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: @screen-elg-min) {
+  .make-grid(elx);
+}

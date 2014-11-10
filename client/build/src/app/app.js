@@ -3,5 +3,20 @@ angular.module('app', [
     'ngTouch',
     'ui.router',
     'ngAnimate',
-    'app.directives'
-]);
+    'restangular',
+
+    'templates-app',
+    'templates-common',
+
+    'app.directives',
+    'app.services',
+    'app.resource',
+
+    //page
+    'app.feed',
+
+    'ngMockE2E'
+])
+    .controller('AppCtrl', ['$scope', function($scope){
+
+    }]);

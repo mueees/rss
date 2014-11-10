@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app" class="dark">
+<html ng-app="app" ng-controller="AppCtrl" class="dark">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Car project</title>
@@ -16,64 +16,89 @@
 <body>
 
 <div id="main">
-    <div class="menu"></div>
-    <div class="content">
-
+    <div class="container-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="rss-list type-line">
+                <div class="col-xs-12 col-sm-3  ">
+                    <div class="menu-container">
+                        <nav class="menu">
+                            <ul>
+                                <li>
+                                    <a href="#home">
+                                        <i class="icon-bookmark-empty"></i>
+                                        <span>Home</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="menu-separator"></div>
+                        <menu-category></menu-category>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-9 content-container">
+                    <ui-view></ui-view>
+                   <!-- <div class="rss-list type-line">
                         <div class="rss-title">Habrahabr feed</div>
                         <ul>
                             <li class="rss-post line ">
-                                <div class="content r-tooltip r-tooltip-effect-1">
+                                <div class="content">
                                     <i class="icon-bookmark-empty"></i>
                                     <span class="title">25 живописных городов, которые становятся еще прекраснее с приходом зимы25 живописных городов, которые становятся еще прекраснее с приходом зимы</span>
-
-                                    <div class="r-tooltip-content">
-                                        <div class="t-image"></div>
-                                        <div class="t-content">
-                                            <div class="img tall" style="background-image: url('http://upload.wikimedia.org/wikipedia/commons/0/07/Bonsai_IMG_6425.jpg');"></div>
-                                            <div class="tooltip-text">
-                                                25 живописных городов, которые становятся еще прекраснее с приходом зимы25 живописных городов, которые становятся еще прекраснее с приходом зимы
-                                            </div>
-                                        </div>
-                                    </div>
+                                </div>
+                                <span class="time">2h 35m</span>
+                            </li>
+                            <li class="rss-post line ">
+                                <div class="content">
+                                    <i class="icon-bookmark-empty"></i>
+                                    <span class="title">25 живописных городов, которые становятся еще прекраснее с приходом зимы25 живописных городов, которые становятся еще прекраснее с приходом зимы</span>
+                                </div>
+                                <span class="time">2h 35m</span>
+                            </li>
+                            <li class="rss-post line ">
+                                <div class="content">
+                                    <i class="icon-bookmark-empty"></i>
+                                    <span class="title">25 живописных городов, которые становятся еще прекраснее с приходом зимы25 живописных городов, которые становятся еще прекраснее с приходом зимы</span>
+                                </div>
+                                <span class="time">2h 35m</span>
+                            </li>
+                            <li class="rss-post line ">
+                                <div class="content">
+                                    <i class="icon-bookmark-empty"></i>
+                                    <span class="title">25 живописных городов, которые становятся еще прекраснее с приходом зимы25 живописных городов, которые становятся еще прекраснее с приходом зимы</span>
                                 </div>
                                 <span class="time">2h 35m</span>
                             </li>
                         </ul>
-                    </div>
+                    </div>-->
+                    <!--<div class="rss-list type-card">
+                        <div class="rss-title">Habrahabr feed</div>
+                        <ul>
+                            <li class="rss-post card">
+                                <div class="card-content">
+                                    <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+                                    <div class="content">
+                                        <span class="title">25 живописных городов, которые становятся </span>
+                                    </div>
+                                    <span class="time">2h 35m</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>-->
                 </div>
             </div>
         </div>
-
-
-
-        <div class="type">
-            <h1>Google Nexus Website Menu</h1>
-            <h1>Какой то длинный русский заголовок</h1>
-            <div class="description big">A sidebar menu as seen on the Google Nexus 7 page</div>
-
-            <h2>Какой то длинный русский заголовок</h2>
-            <h3>Какой то длинный русский заголовок</h3>
-            <h4>Какой то длинный русский заголовок</h4>
-
-            <hr/>
-
-            <div>
-                <p>Simple text</p>
-                <p>
-                    Вне зависимости от используемого метода растровые изображения по своей природе остаются ограниченными в масштабировании.
-                    Тут нам может помощь векторная графика. SVG (Scalable Vector Graphics) формат на основе XML поддерживается большинством браузеров.
-                    Самый простой способ использования SVG-изображений — в теге img или CSS-параметрами background-image и content:url().
-                </p>
-            </div>
-        </div>
-
     </div>
 </div>
 
+<div class="floatingEntry">
+    <div class="main">
+        <div class="close">X</div>
+        <div class="content">
+            This is content
+        </div>
+    </div>
+    <div class="shadow"></div>
+</div>
 
 </body>
 </html>

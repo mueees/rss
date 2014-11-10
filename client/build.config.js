@@ -19,6 +19,8 @@ module.exports = {
             'vendor/angular/angular.js',
             'vendor/underscore/underscore-min.js',
             'vendor/ngstorage/ngStorage.min.js',
+            'vendor/restangular/dist/restangular.min.js',
+            'vendor/angular-mocks/angular-mocks.js',
             'vendor/angular-touch/angular-touch.min.js',
             'vendor/angular-ui-router/release/angular-ui-router.min.js',
             'vendor/angular-animate/angular-animate.min.js'
