@@ -1,2 +1,15 @@
-<feed-menu></feed-menu>
-<feeds></feeds>
+<div ng-controller="FeedCtrl">
+    <!--<ul class="feed-menu">
+        <li>reload</li>
+        <li>settings</li>
+    </ul>-->
+
+    <div class="rss-list type-line">
+        <div class="rss-title">{{data.feed.name}}</div>
+        <ul ng-switch on="data.typeViewPost">
+            <post-list post="post" ng-switch-when="list" ng-repeat="post in data.feed.posts"></post-list>
+            <post-card post="post" ng-switch-when="card" ng-repeat="post in data.feed.posts"></post-card>
+        </ul>
+    </div>
+
+</div>

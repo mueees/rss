@@ -1,7 +1,6 @@
 angular.module('app')
     .run(['$httpBackend', function($httpBackend){
-        var res = $httpBackend.when('GET', '/category');
-        res.respond(200, [
+        $httpBackend.when('GET', '/category').respond(200, [
             {
                 name: "Web",
                 feeds: [
@@ -33,9 +32,28 @@ angular.module('app')
                     {
                         name: 'Portal news',
                         unread: '0',
-                        _id: "5"
+                        _id: "12"
                     }
                 ]
             }
         ]);
+        $httpBackend.when('GET', '/feed/12').respond(200, {
+            _id: 12,
+            name: "Habrahabr",
+            posts: [
+                {
+                    _id: 2,
+                    title: 'This is title',
+                    description: "THis is desc"
+                },
+                {
+                    _id: 3,
+                    title: 'This is title 2',
+                    description: "THis is desc 2"
+                }
+            ]
+        });
+
+
+
     }]);
