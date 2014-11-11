@@ -59,7 +59,8 @@ module.exports = function ( grunt ) {
                 sub: true,
                 boss: true,
                 eqnull: true,
-                debug: true
+                debug: true,
+                validthis: true
             },
             globals: {}
         },

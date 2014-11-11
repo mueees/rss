@@ -1,7 +1,27 @@
-<li class="rss-post line ">
-    <div class="content">
-        <i class="icon-bookmark-empty"></i>
-        <span class="title">25 живописных городов, которые становятся еще прекраснее с приходом зимы25 живописных городов, которые становятся еще прекраснее с приходом зимы</span>
+<li class="rss-post line"  ng-class="{unread: !post.isRead}">
+    <div  ng-if="!isShowBody" class="preview">
+        <div class="content">
+            <i class="icon-bookmark-empty"></i>
+            <span class="title" ng-click="choosePost()">{{post.title}}</span>
+        </div>
+        <span class="time">{{post.time}}</span>
     </div>
-    <span class="time">2h 35m</span>
+
+    <div ng-if="isShowBody" class="body">
+        <article>
+            <header>
+                <h1>{{post.title}}</h1>
+                <div class="post-menu">
+                    <div class="post-item">
+                        <a class="lk-effect-1 menu-link" href="#" ng-click="keepUnread($event)">keep unread</a>
+                    </div>
+                    <div class="post-item">
+                        <tag-manager post-id="post._id" tags="post.tags"></tag-manager>
+                    </div>
+                </div>
+            </header>
+
+        </article>
+        {{post.body}}
+    </div>
 </li>

@@ -1,0 +1,13 @@
+<div ng-controller="FeedController">
+    <div class="rss-list type-line">
+        <div class="rss-title">{{data.feed.name}}</div>
+
+        <div ng-switch on="data.typeViewPost">
+            <div ng-switch-when="list">
+                <posts infinite-scroll="getMorePosts()" >
+                    <post-list post="post" ng-repeat="post in data.feed.posts"></post-list>
+                </posts>
+            </div>
+        </div>
+    </div>
+</div>

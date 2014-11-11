@@ -12,6 +12,10 @@
     "angular-gestures": "latest",
     "ngstorage": "~0.3.0",
     "underscore" : "latest",
+    "ngInfiniteScroll" : "latest",
+    "jQuery" : "latest",
+
+    "angular-restmod" : "latest",
     "restangular" : "latest"
   },
   "dependencies": {}

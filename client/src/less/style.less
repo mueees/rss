@@ -7,7 +7,6 @@
 
 /*body style*/
 
-
 body{
   font-family: 'Open Sans', sans-serif;
   padding-top: 20px;
@@ -31,7 +30,6 @@ body{
   }
   &.type-line{
     .rss-post{
-
       &:last-child{
         border-bottom: none;
       }
@@ -57,6 +55,10 @@ body{
       overflow: hidden;
       box-sizing: border-box;
       text-overflow: ellipsis;
+    }
+
+    .title{
+      cursor: pointer;
     }
 
     .time{
@@ -112,6 +114,32 @@ body{
   }
 }
 /*RSS END*/
+
+/*POST-MENU*/
+.post-menu{
+  margin: 5px 0 10px;
+
+  .menu-link{
+    color: silver;
+  }
+  .post-item{
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 14px;
+  }
+}
+.tag-manager{
+  .add-tag{
+    display: inline-block;
+  }
+  .tags-list{
+    display: inline-block;
+    .tag{
+      margin-right: 10px;
+    }
+  }
+}
+/*POST-MENU END*/
 
 /*TOOLTIP*/
 .r-tooltip{
@@ -248,15 +276,10 @@ body{
     display: none;
   }
 }
-
 .menu-separator{
   background: @menu-text-color;
   height: 15px;
 }
-
-
-
-
 /*MENU END*/
 
 /*FLOAT ENTRY*/
@@ -299,3 +322,48 @@ body{
 
 }
 /*FLOAT ENTRY END*/
+
+
+/*LINK EFFECT*/
+a{
+  position: relative;
+  display: inline-block;
+  outline: none;
+  color: @main-color;
+  text-decoration: none;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+
+  &:hover{
+    text-decoration: none;
+    color: @main-color;
+  }
+}
+.lk-effect-1{
+
+  &:after{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    content: '';
+    opacity: 0;
+    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    transform: translateY(-5px);
+  }
+
+  &:hover{
+    &:after{
+      height: 2px;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+
+
+/*LINK EFFECT END*/

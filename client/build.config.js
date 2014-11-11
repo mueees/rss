@@ -16,10 +16,15 @@ module.exports = {
 
     vendor_files: {
         js: [
+            'vendor/jQuery/dist/jquery.min.js',
             'vendor/angular/angular.js',
             'vendor/underscore/underscore-min.js',
             'vendor/ngstorage/ngStorage.min.js',
+
             'vendor/restangular/dist/restangular.min.js',
+            'vendor/angular-restmod/dist/angular-restmod-bundle.js',
+
+            'vendor/ngInfiniteScroll/build/ng-infinite-scroll.js',
             'vendor/angular-mocks/angular-mocks.js',
             'vendor/angular-touch/angular-touch.min.js',
             'vendor/angular-ui-router/release/angular-ui-router.min.js',

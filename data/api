@@ -1,2 +1,25 @@
 /home
-/category/all
+
+get feed by id
+/feed/:id
+
+get post by id
+/post/:id
+
+get posts (that belong to feed) from 0 to 20
+/feed/:id/post/from/0/to/20
+
+get all tags
+/tags
+
+create tag
+/tags/create
+
+remove tag
+/tags/remove
+
+get posts (that belong to tag) from 0 to 20
+/tag/:id/post/from/0/to/20
+
+/posts/feed/:id/from/0/to/0
+/posts/tag/:id/from/0/to/0
