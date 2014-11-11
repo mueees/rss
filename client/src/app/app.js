@@ -19,6 +19,7 @@
 
         //page
         'app.feed',
+        'app.landing',
 
         'ngMockE2E'
     ])
