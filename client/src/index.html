@@ -7,53 +7,14 @@
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
 
-    <!-- compiled JavaScript -->
-    <% scripts.forEach( function ( file ) { %>
-    <script type="text/javascript" src="<%= file %>"></script>
-    <% }); %>
+
 
 </head>
 <body>
 
 <div id="main">
     <div class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-3  ">
-                    <div class="menu-container">
-                        <nav class="menu">
-                            <ul>
-                                <li>
-                                    <a href="#home">
-                                        <i class="icon-bookmark-empty"></i>
-                                        <span>Home</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="menu-separator"></div>
-                        <menu-category></menu-category>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-9 content-container">
-                    <ui-view></ui-view>
-                    <!--<div class="rss-list type-card">
-                        <div class="rss-title">Habrahabr feed</div>
-                        <ul>
-                            <li class="rss-post card">
-                                <div class="card-content">
-                                    <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
-                                    <div class="content">
-                                        <span class="title">25 живописных городов, которые становятся </span>
-                                    </div>
-                                    <span class="time">2h 35m</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>-->
-                </div>
-            </div>
-        </div>
+        <ui-view></ui-view>
     </div>
 </div>
 
@@ -67,5 +28,34 @@
     <div class="shadow"></div>
 </div>
 
+<script>
+    var RSS = {
+        user: {
+            email: 'mue.miv@gmail.com',
+            _id: "test"
+        }
+    }
+</script>
+
+<!-- compiled JavaScript -->
+<% scripts.forEach( function ( file ) { %>
+<script type="text/javascript" src="<%= file %>"></script>
+<% }); %>
+
 </body>
 </html>
+
+<!--<div class="rss-list type-card">
+                <div class="rss-title">Habrahabr feed</div>
+                <ul>
+                    <li class="rss-post card">
+                        <div class="card-content">
+                            <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+                            <div class="content">
+                                <span class="title">25 живописных городов, которые становятся </span>
+                            </div>
+                            <span class="time">2h 35m</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>-->

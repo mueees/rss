@@ -14,8 +14,11 @@
         'templates-common',
 
         'app.directives',
+        'app.menu',
         'app.services',
         'app.resource',
+        'app.security',
+        'app.rss',
 
         //page
         'app.feed',

@@ -1,9 +1,8 @@
-(function () {
-    "use strict";
+(function(){
+    'use strict';
 
-    angular.module('app.directives.menuCategory', [])
+    angular.module('app.menu')
         .directive('menuCategory', function(CategoryModel, $PubSubFactory){
-
             function link(scope){
                 CategoryModel.all().then(function (categories) {
                     scope.categories = categories;
@@ -38,21 +37,7 @@
                 restrict: "E",
                 replace: true,
                 link: link,
-                templateUrl: "directives/menuCategory/menuCategory.tpl.html"
+                templateUrl: "menu/menu-category/menu-category.view.tpl.html"
             };
-        })
-        .directive('categoryItem', [function(){
-
-            function link(scope){
-                scope.isOpen = false;
-                scope.categoryClick = function () {
-                    scope.isOpen = !scope.isOpen;
-                };
-            }
-
-            return {
-                restrict: "A",
-                link: link
-            };
-        }]);
+        });
 })();

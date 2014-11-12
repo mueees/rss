@@ -1,11 +1,7 @@
 (function () {
     "use strict";
-
-    angular.module('directives.posts', [])
+    angular.module('app.rss.post')
         .directive('posts', function () {
-            function link(scope, element, attrs){
-
-            }
             function controller(){
                 this.posts = [];
 
@@ -27,8 +23,7 @@
                 restrict: "E",
                 replace: true,
                 transclude: true,
-                templateUrl: "directives/posts/posts/posts.directive.tpl.html",
-                link: link
+                templateUrl: "rss/post/posts/posts.view.tpl.html"
             };
         });
 })();

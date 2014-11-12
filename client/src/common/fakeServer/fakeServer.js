@@ -88,8 +88,17 @@
                 }
             ]);
 
+
+            $httpBackend.when('POST', new RegExp('/post/tag/remove')).respond(200, {});
             $httpBackend.when('POST', new RegExp('/post/\\d{1,5}/markasread')).respond(200, {});
             $httpBackend.when('POST', new RegExp('/post/\\d{1,5}/markasunread')).respond(200, {});
-            $httpBackend.when('POST', new RegExp('/post/tag/remove')).respond(200, {});
+            $httpBackend.when('POST', new RegExp('/post/\\d{1,5}/markasunread')).respond(200, {});
+            $httpBackend.when('POST', new RegExp('/user/login')).respond(400, {
+                error: "Cannot login"
+            });
+
+            $httpBackend.when('POST', new RegExp('/user/register')).respond(200, {
+                message: "Please check you email"
+            });
         }]);
 })();

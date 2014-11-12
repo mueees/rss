@@ -1,12 +1,12 @@
 (function () {
     "use strict";
 
-    angular.module('directives.posts.list', [])
+    angular.module('app.rss.post')
         .directive('postList', function (PostModel) {
             return {
                 restrict: "E",
                 require: "^posts",
-                templateUrl: "directives/posts/list/post.tpl.html",
+                templateUrl: "rss/post/list/list.view.tpl.html",
                 replace: true,
                 scope: {
                     post: "="
@@ -14,7 +14,6 @@
                 link: function (scope, element, attrs, postsCtrl) {
                     scope.isShowBody = false;
                     postsCtrl.addPost(scope);
-
                     scope.choosePost = function () {
                         postsCtrl.hideAllBody(scope);
 
@@ -26,7 +25,6 @@
 
                         scope.isShowBody = !scope.isShowBody;
                     };
-                    
                     scope.keepUnread = function ($event) {
                         $event.preventDefault();
                         PostModel.markAsUnRead(scope.post._id).then(function () {
@@ -35,8 +33,6 @@
                         postsCtrl.hideAllBody(scope);
                         scope.isShowBody = !scope.isShowBody;
                     };
-
-
                 }
             };
         });

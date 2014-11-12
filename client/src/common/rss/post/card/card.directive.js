@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    angular.module('directives.posts.card', [])
+    angular.module('app.rss.post')
         .directive('postCard', [function () {
             return {
                 restrict: "E",
@@ -9,7 +9,7 @@
                     post: '='
                 },
                 replace: true,
-                templateUrl: "directives/posts/card/post.tpl.html",
+                templateUrl: "rss/post/card/card.view.tpl.html",
                 link: function (scope, element, attrs) {
 
                 }

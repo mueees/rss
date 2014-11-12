@@ -8,7 +8,7 @@
             </a>
             <ul class="feeds" ng-show="category.feeds.length">
                 <li ng-click="feedClick(feed._id)" ng-class="{active: isActive(feed._id)}" class="feed" ng-repeat="feed in category.feeds" >
-                    <a href="#/feed/{{feed._id}}">
+                    <a href="#/rss/feed/{{feed._id}}">
                         {{feed.name}}
                     </a>
                 </li>

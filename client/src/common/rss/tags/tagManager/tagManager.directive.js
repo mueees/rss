@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    angular.module('app.directives.tagManager', [])
+    angular.module('app.rss.tags')
         .directive('tagManager', function () {
 
             function link(scope, element, attrs){
@@ -30,7 +30,7 @@
                 replace: true,
                 link: link,
                 controller: controller,
-                templateUrl: 'directives/tagManager/tagManager.tpl.html'
+                templateUrl: 'rss/tags/tagManager/tagManager.view.tpl.html'
             };
         });
 })();

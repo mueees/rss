@@ -5,7 +5,7 @@
             $scope.data.typeViewPost = 'list';
             
             $scope.getMorePosts = function () {
-                $scope.data.feed.getMorePosts();
+                //$scope.data.feed.getMorePosts();
             };
         });
 })();
