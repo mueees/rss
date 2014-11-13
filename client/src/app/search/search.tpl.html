@@ -6,7 +6,7 @@
 
         <h1>{{data.feed.name}}</h1>
 
-        <add-feed ng-if="data.feed"></add-feed>
+        <add-feed ng-if="data.feed" feed-id="data.feed._id" feed-url="data.feed.url"></add-feed>
 
         <div ng-if="data.feed.description" class="description">{{data.feed.description}}</div>
 

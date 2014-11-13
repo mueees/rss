@@ -4,16 +4,30 @@
     </div>
 
     <div class="content" ng-if="showCategory">
-        <div class="input-group">
-            <input type="text" class="form-control" ng-model="feed.name">
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="data.name" placeholder="Feed name">
         </div>
-        <ul>
-            <li ng-repeat="category in categories">
-                {{category.name}}
-            </li>
-        </ul>
-        <add-category category-create="categoryCreate"></add-category>
-        <button class="btn btn-link" ng-click="cancel()">Cancel</button>
+        <div class="form-group">
+            <p>Choose categories:</p>
+            <ul>
+                <li ng-repeat="category in categories">
+                    <label>
+                        <input type="checkbox" /> {{category.name}}
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <add-category category-create="categoryCreate"></add-category>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success" ng-click="addFeed()" ng-disabled="!data.name" >add</button>
+            <button class="btn btn-link" ng-click="cancel()">Cancel</button>
+        </div>
+
+
     </div>
 
 </div>
