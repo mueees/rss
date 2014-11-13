@@ -1,7 +1,7 @@
 <li class="rss-post line"  ng-class="{unread: !post.isRead}">
     <div  ng-if="!isShowBody" class="preview">
         <div class="content">
-            <i class="icon-bookmark-empty"></i>
+            <i class="icon-bookmark-empty" ng-if="type != 'guest'"></i>
             <span class="title" ng-click="choosePost()">{{post.title}}</span>
         </div>
         <span class="time">{{post.time}}</span>
@@ -11,7 +11,7 @@
         <article>
             <header>
                 <h1>{{post.title}}</h1>
-                <div class="post-menu">
+                <div class="post-menu" ng-if="type != 'guest'">
                     <div class="post-item">
                         <a class="lk-effect-1 menu-link" href="#" ng-click="keepUnread($event)">keep unread</a>
                     </div>
@@ -20,7 +20,6 @@
                     </div>
                 </div>
             </header>
-
         </article>
         {{post.body}}
     </div>

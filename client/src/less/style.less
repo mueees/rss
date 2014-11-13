@@ -12,6 +12,11 @@ body{
   padding-top: 20px;
 }
 
+ul{
+  margin: 0;
+  padding: 0;
+}
+
 .dark{
   body {
     background: @main-bg;
@@ -258,7 +263,7 @@ body{
     border-bottom: 1px solid silver;
 
     &.feedActive{
-      box-shadow: 5px 0 0 #62BBAD inset;
+      box-shadow: 5px 0 0 @second-color inset;
     }
 
     &.open{
@@ -363,7 +368,74 @@ a{
     }
   }
 }
-
-
-
 /*LINK EFFECT END*/
+
+.list{
+  li{
+    border-bottom: 1px solid silver;
+
+    padding: 8px 11px;
+    color: @menu-text-color;
+    display: block;
+    background: @main-color;
+
+    &:hover{
+      text-decoration: none;
+      color: @main-color;
+      background: @menu-text-color;
+
+      a{
+        color: @main-color;
+      }
+    }
+
+    &:last-child{
+      border-bottom: none;
+    }
+
+    a{
+      color: @menu-text-color;
+    }
+  }
+}
+
+/*search-feed*/
+.search-feed{
+  .search-title{
+    padding: 5px;
+    background: @second-color;
+  }
+  .feeds-list{
+    li{
+      cursor: pointer;
+    }
+  }
+
+  .search-input{
+    position: relative;
+  }
+
+  .close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+/*search-feed end*/
+
+.add-category{
+  .close-btn{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    z-index: 4;
+  }
+}
+
+/*ELEMENTS*/
+.close-btn{
+  color: black;
+  padding: 5px;
+  cursor: pointer;
+}
+/*ELEMENTS END*/

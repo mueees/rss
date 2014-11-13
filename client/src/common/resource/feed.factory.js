@@ -33,6 +33,21 @@
             return {
                 getById: function(_id){
                     return Restangular.one(config.name, _id).get();
+                },
+                findFeeds: function (searchInput) {
+                    return Restangular.one(config.name).customPOST({
+                        searchInput: searchInput
+                    },"search");
+                },
+                getPostsByUrl: function (url) {
+                    return Restangular.one(config.name).customPOST({
+                        url: url
+                    },"getByUrl");
+                },
+                getPostsById: function (id) {
+                    return Restangular.one(config.name).customPOST({
+                        _id: id
+                    },"getById");
                 }
             };
         }]);

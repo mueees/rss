@@ -10,6 +10,11 @@
             return {
                 all: function(){
                     return Restangular.all(config.name).getList();
+                },
+                addCategory: function (name) {
+                    return Restangular.one(config.name).customPOST({
+                        name: name
+                    }, 'add');
                 }
             };
         }]);

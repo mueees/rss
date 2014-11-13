@@ -20,9 +20,11 @@
         'app.security',
         'app.rss',
 
+
         //page
         'app.feed',
         'app.landing',
+        'app.search',
 
         'ngMockE2E'
     ])

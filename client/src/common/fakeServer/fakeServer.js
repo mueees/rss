@@ -87,18 +87,79 @@
                     isRead: true
                 }
             ]);
-
-
+            $httpBackend.when('POST', new RegExp('/feed/search')).respond(200, {
+                data: {
+                    exists: [
+                        {
+                            name: 'test 2',
+                            url: 'http://test.url',
+                            _id: "some id",
+                            readers: 23,
+                            posts: 145
+                        },
+                        {
+                            name: 'test 3',
+                            url: 'http://test.url',
+                            _id: "some id",
+                            readers: 54,
+                            posts: 20
+                        }
+                    ],
+                    newFeeds: [
+                        {
+                            name: 'tes 4',
+                            url: 'http://test.url'
+                        },
+                        {
+                            name: 'test 5',
+                            url: 'http://test.url'
+                        }
+                    ]
+                }
+            });
+            $httpBackend.when('POST', new RegExp('/category/add')).respond(200, {
+                data: {
+                    _id: 'shgw45gv4w5y'
+                }
+            });
             $httpBackend.when('POST', new RegExp('/post/tag/remove')).respond(200, {});
+            $httpBackend.when('POST', new RegExp('/feed/getByUrl')).respond(200, {
+                data: {
+                    posts: [
+                        {
+                            title: "this is title"
+                        },
+                        {
+                            title: "2 this is title"
+                        }
+                    ]
+                }
+            });
+            $httpBackend.when('POST', new RegExp('/feed/getById')).respond(200, {
+                data: {
+                    posts: [
+                        {
+                            title: "this is title",
+                            body: "this is body"
+                        },
+                        {
+                            title: "2 this is title",
+                            body: "this is body"
+                        }
+                    ]
+                }
+            });
             $httpBackend.when('POST', new RegExp('/post/\\d{1,5}/markasread')).respond(200, {});
             $httpBackend.when('POST', new RegExp('/post/\\d{1,5}/markasunread')).respond(200, {});
             $httpBackend.when('POST', new RegExp('/post/\\d{1,5}/markasunread')).respond(200, {});
             $httpBackend.when('POST', new RegExp('/user/login')).respond(400, {
                 error: "Cannot login"
             });
-
             $httpBackend.when('POST', new RegExp('/user/register')).respond(200, {
                 message: "Please check you email"
             });
+
+
+
         }]);
 })();

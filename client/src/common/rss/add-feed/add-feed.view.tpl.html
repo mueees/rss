@@ -1,0 +1,19 @@
+<div class="add-feed">
+    <div  ng-if="!showCategory">
+        <button class="btn btn-success" ng-click="addCategory()">+</button>
+    </div>
+
+    <div class="content" ng-if="showCategory">
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="feed.name">
+        </div>
+        <ul>
+            <li ng-repeat="category in categories">
+                {{category.name}}
+            </li>
+        </ul>
+        <add-category category-create="categoryCreate"></add-category>
+        <button class="btn btn-link" ng-click="cancel()">Cancel</button>
+    </div>
+
+</div>

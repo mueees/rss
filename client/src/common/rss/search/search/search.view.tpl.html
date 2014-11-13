@@ -1,0 +1,31 @@
+<div class="search-feed">
+    <form name="SearchFeed">
+        <div class="form-group search-input">
+            <input ng-keyup="keyUp()" ng-model="data.search" type="text" name="search" id="search" class="form-control" placeholder="Feed url" />
+            <div class="close-btn" ng-click="resetSearch()" ng-if="data.search"><i class="icon-cancel"></i></div>
+        </div>
+    </form>
+
+    <div class="feeds-result">
+        <div ng-if="(!data.feeds.newFeeds && !data.feeds.exists) && !data.isShowPreloader && !data.error">No feeds</div>
+        <div ng-if="data.isShowPreloader">Try to find feeds</div>
+        <div ng-if="data.error">{{data.error}}</div>
+        <div ng-if="data.feeds.newFeeds">
+            <ul class="feeds-list list">
+                <li ng-repeat="feed in data.feeds.newFeeds" ng-click="chooseFeed(feed)">
+                    {{feed._id}}
+                    {{feed.name}}
+                </li>
+            </ul>
+        </div>
+        <br/>
+        <div ng-if="data.feeds.exists">
+            <ul class="feeds-list list">
+                <li ng-repeat="feed in data.feeds.exists" ng-click="chooseFeed(feed)">
+                    {{feed._id}}
+                    {{feed.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

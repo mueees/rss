@@ -9,21 +9,23 @@
                 templateUrl: "rss/post/list/list.view.tpl.html",
                 replace: true,
                 scope: {
-                    post: "="
+                    post: "=",
+                    type: "@"
                 },
                 link: function (scope, element, attrs, postsCtrl) {
+
                     scope.isShowBody = false;
                     postsCtrl.addPost(scope);
                     scope.choosePost = function () {
                         postsCtrl.hideAllBody(scope);
+                        scope.isShowBody = !scope.isShowBody;
 
-                        if(!scope.post.isRead){
+                        if(!scope.post.isRead && scope.type != 'guest'){
                             PostModel.markAsRead(scope.post._id).then(function () {
                                 scope.post.isRead = true;
                             });
                         }
 
-                        scope.isShowBody = !scope.isShowBody;
                     };
                     scope.keepUnread = function ($event) {
                         $event.preventDefault();

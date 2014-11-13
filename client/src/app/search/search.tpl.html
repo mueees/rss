@@ -1,0 +1,25 @@
+<div class="row" ng-controller="SearchController">
+    <div class="col-sm-3">
+        <search-feed choose-feed="data.chooseFeed" clear-search="data.clearSearch"></search-feed>
+    </div>
+    <div class="col-sm-9">
+
+        <h1>{{data.feed.name}}</h1>
+
+        <add-feed ng-if="data.feed"></add-feed>
+
+        <div ng-if="data.feed.description" class="description">{{data.feed.description}}</div>
+
+        <div ng-if="data.errorGetPosts">{{data.errorGetPosts}}</div>
+        <div ng-if="data.isShowPreload && !data.errorGetPosts">loading posts</div>
+
+        <div ng-switch on="data.typeViewPost">
+            <div ng-switch-when="list">
+                <posts>
+                    <post-list type="guest" post="post" ng-repeat="post in data.feed.posts"></post-list>
+                </posts>
+            </div>
+        </div>
+
+    </div>
+</div>

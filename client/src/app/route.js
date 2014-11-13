@@ -21,6 +21,13 @@
                     authorized: true
                 }
             })
+            .state('feed.search', {
+                url: '/search',
+                templateUrl: 'search/search.tpl.html',
+                data: {
+                    authorized: true
+                }
+            })
             .state('feed.id', {
                 url: '/feed/:id',
                 templateUrl: 'feed/list/feed.tpl.html',
