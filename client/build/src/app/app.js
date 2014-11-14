@@ -1,22 +1,34 @@
-angular.module('app', [
-    'ngStorage',
-    'ngTouch',
-    'ui.router',
-    'ngAnimate',
-    'restangular',
+(function () {
+    "use strict";
 
-    'templates-app',
-    'templates-common',
+    angular.module('app', [
+        'ngStorage',
+        'ngTouch',
+        'ui.router',
+        'ngAnimate',
 
-    'app.directives',
-    'app.services',
-    'app.resource',
+        'restangular',
+        'restmod',
 
-    //page
-    'app.feed',
+        'templates-app',
+        'templates-common',
 
-    'ngMockE2E'
-])
-    .controller('AppCtrl', ['$scope', function($scope){
+        'app.directives',
+        'app.menu',
+        'app.services',
+        'app.resource',
+        'app.security',
+        'app.rss',
 
-    }]);
+
+        //page
+        'app.feed',
+        'app.landing',
+        'app.search',
+
+        'ngMockE2E'
+    ])
+        .controller('AppCtrl', ['$scope', function($scope){
+
+        }]);
+})();

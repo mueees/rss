@@ -1,0 +1,30 @@
+._infinite-spinning() {
+  from {
+    transform: rotate(1deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes infinite-spinning {._infinite-spinning;}
+@-moz-keyframes infinite-spinning {._infinite-spinning;}
+@-ms-keyframes infinite-spinning {._infinite-spinning;}
+@-o-keyframes infinite-spinning {._infinite-spinning;}
+@keyframes infinite-spinning {._infinite-spinning;}
+
+.spin{
+  .animation(infinite-spinning, 3000ms, infinite, linear);
+  display: inline-block;
+
+  &.spin-right{
+    position: absolute;
+    right: -30px;
+    top: 5px;
+  }
+  &.spin-left{
+    position: absolute;
+    left: -30px;
+    top: 5px;
+  }
+}
+

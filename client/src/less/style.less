@@ -1,9 +1,11 @@
+@import "import/mixins.less";
 @import "import/font.less";
 @import "import/fontelo.less";
 @import "import/reset.less";
 @import "import/bootstrap.less";
 @import "import/variables.less";
 @import "import/typo.less";
+@import "import/animation.less";
 
 /*body style*/
 
@@ -229,14 +231,6 @@ ul{
       color: @menu-text-color;
       display: block;
 
-      .icon-toggle{
-        display: none;
-
-        &.active{
-          display: block;
-        }
-      }
-
       &:hover{
         text-decoration: none;
         color: @main-color;
@@ -274,6 +268,21 @@ ul{
 
     &:last-child{
       border-bottom: none;
+    }
+
+    .category-title {
+      padding: 12px 15px;
+      cursor: pointer;
+      display: block;
+      color: @menu-text-color;
+
+      .icon-toggle{
+        display: none;
+
+        &.active{
+          display: block;
+        }
+      }
     }
   }
 
@@ -429,6 +438,15 @@ a{
     top: 0;
     right: 0px;
     z-index: 4;
+  }
+}
+.add-feed{
+  .add-feed-content{
+    position: relative;
+    display: inline-block;
+  }
+  .button-group{
+    position: relative;
   }
 }
 

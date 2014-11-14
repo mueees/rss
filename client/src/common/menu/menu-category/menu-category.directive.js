@@ -2,17 +2,22 @@
     'use strict';
 
     angular.module('app.menu')
-        .directive('menuCategory', function(CategoryModel, $PubSubFactory){
+        .directive('menuCategory', function(CategoryModel, $PubSubFactory, $rootScope, $state, $stateParams){
+
             function link(scope){
+
+                var state = [
+                    'feed.id'
+                ];
+
                 CategoryModel.all().then(function (categories) {
                     scope.categories = categories;
+                    routeChange();
                 });
 
                 scope.activeFeed = null;
 
                 scope.feedClick = function (_id) {
-                    scope.activeFeed = _id;
-                    $PubSubFactory.publish('activeFeed', scope.activeFeed);
                 };
 
                 scope.isActive = function(_id){
@@ -31,6 +36,24 @@
                         return false;
                     }
                 };
+
+                function deselectAllFeed(){
+                    scope.activeFeed = null;
+                }
+                function chooseFeed(id){
+                    scope.activeFeed = id;
+                }
+                function routeChange(){
+                    if($state.current.name == 'feed.id'){
+                        deselectAllFeed();
+                        chooseFeed($stateParams.id);
+                    }else{
+                        //deselect all feeds
+                        deselectAllFeed();
+                    }
+                }
+
+                $rootScope.$on('$stateChangeSuccess', routeChange);
             }
 
             return {

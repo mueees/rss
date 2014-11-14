@@ -6,6 +6,7 @@
             $httpBackend.when('GET', '/category').respond(200, [
                 {
                     name: "Web",
+                    _id: "123",
                     feeds: [
                         {
                             name: 'Habrahabr.ru',
@@ -122,6 +123,20 @@
                     _id: 'shgw45gv4w5y'
                 }
             });
+            $httpBackend.when('GET', new RegExp('/category/getCategories')).respond(200, {
+                data: {
+                    categories: [
+                        {
+                            name: "Web",
+                            _id: "123"
+                        },
+                        {
+                            name: "News",
+                            _id: "12343"
+                        }
+                    ]
+                }
+            });
             $httpBackend.when('POST', new RegExp('/post/tag/remove')).respond(200, {});
             $httpBackend.when('POST', new RegExp('/feed/getByUrl')).respond(200, {
                 data: {
@@ -149,6 +164,10 @@
                     ]
                 }
             });
+
+            $httpBackend.when('POST', new RegExp('/feed/addByUrl')).respond(200, {});
+            $httpBackend.when('POST', new RegExp('/feed/addById')).respond(200, {});
+
             $httpBackend.when('POST', new RegExp('/post/\\d{1,5}/markasread')).respond(200, {});
             $httpBackend.when('POST', new RegExp('/post/\\d{1,5}/markasunread')).respond(200, {});
             $httpBackend.when('POST', new RegExp('/post/\\d{1,5}/markasunread')).respond(200, {});

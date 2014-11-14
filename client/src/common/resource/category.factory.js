@@ -15,6 +15,9 @@
                     return Restangular.one(config.name).customPOST({
                         name: name
                     }, 'add');
+                },
+                getCategories: function () {
+                    return Restangular.one(config.name).customGET('getCategories');
                 }
             };
         }]);

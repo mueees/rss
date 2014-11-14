@@ -48,8 +48,16 @@
                     return Restangular.one(config.name).customPOST({
                         _id: id
                     },"getById");
+                },
+
+                addByUrl: function (data) {
+                    return Restangular.one(config.name).customPOST(data,"addByUrl");
+                },
+                addById: function (data) {
+                    return Restangular.one(config.name).customPOST(data,"addById");
                 }
             };
+
         }]);
 
 })();

@@ -7,99 +7,14 @@
     <!-- compiled CSS -->
     <link rel="stylesheet" type="text/css" href="assets/Rss Client-0.0.1.css" />
 
-    <!-- compiled JavaScript -->
-    
-    <script type="text/javascript" src="vendor/angular/angular.js"></script>
-    
-    <script type="text/javascript" src="vendor/underscore/underscore-min.js"></script>
-    
-    <script type="text/javascript" src="vendor/ngstorage/ngStorage.min.js"></script>
-    
-    <script type="text/javascript" src="vendor/restangular/dist/restangular.min.js"></script>
-    
-    <script type="text/javascript" src="vendor/angular-mocks/angular-mocks.js"></script>
-    
-    <script type="text/javascript" src="vendor/angular-touch/angular-touch.min.js"></script>
-    
-    <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
-    
-    <script type="text/javascript" src="vendor/angular-animate/angular-animate.min.js"></script>
-    
-    <script type="text/javascript" src="src/app/app.js"></script>
-    
-    <script type="text/javascript" src="src/app/feed/feed.js"></script>
-    
-    <script type="text/javascript" src="src/app/route.js"></script>
-    
-    <script type="text/javascript" src="src/common/directives/directives.js"></script>
-    
-    <script type="text/javascript" src="src/common/directives/menuCategory/menuCategory.js"></script>
-    
-    <script type="text/javascript" src="src/common/directives/post/post.js"></script>
-    
-    <script type="text/javascript" src="src/common/directives/posts/card/post.js"></script>
-    
-    <script type="text/javascript" src="src/common/directives/posts/list/post.js"></script>
-    
-    <script type="text/javascript" src="src/common/fakeServer/fakeServer.js"></script>
-    
-    <script type="text/javascript" src="src/common/resource/category.js"></script>
-    
-    <script type="text/javascript" src="src/common/resource/feed.js"></script>
-    
-    <script type="text/javascript" src="src/common/resource/resource.js"></script>
-    
-    <script type="text/javascript" src="src/common/services/pubsub.js"></script>
-    
-    <script type="text/javascript" src="src/common/services/services.js"></script>
-    
-    <script type="text/javascript" src="templates-common.js"></script>
-    
-    <script type="text/javascript" src="templates-app.js"></script>
-    
+
 
 </head>
 <body>
 
 <div id="main">
     <div class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-3  ">
-                    <div class="menu-container">
-                        <nav class="menu">
-                            <ul>
-                                <li>
-                                    <a href="#home">
-                                        <i class="icon-bookmark-empty"></i>
-                                        <span>Home</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="menu-separator"></div>
-                        <menu-category></menu-category>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-9 content-container">
-                    <ui-view></ui-view>
-                    <!--<div class="rss-list type-card">
-                        <div class="rss-title">Habrahabr feed</div>
-                        <ul>
-                            <li class="rss-post card">
-                                <div class="card-content">
-                                    <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
-                                    <div class="content">
-                                        <span class="title">25 живописных городов, которые становятся </span>
-                                    </div>
-                                    <span class="time">2h 35m</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>-->
-                </div>
-            </div>
-        </div>
+        <ui-view></ui-view>
     </div>
 </div>
 
@@ -113,5 +28,134 @@
     <div class="shadow"></div>
 </div>
 
+<script>
+    var RSS = {
+        user: {
+            email: 'mue.miv@gmail.com',
+            _id: "test"
+        }
+    }
+</script>
+
+<!-- compiled JavaScript -->
+
+<script type="text/javascript" src="vendor/jQuery/dist/jquery.min.js"></script>
+
+<script type="text/javascript" src="vendor/angular/angular.js"></script>
+
+<script type="text/javascript" src="vendor/underscore/underscore-min.js"></script>
+
+<script type="text/javascript" src="vendor/ngstorage/ngStorage.min.js"></script>
+
+<script type="text/javascript" src="vendor/restangular/dist/restangular.min.js"></script>
+
+<script type="text/javascript" src="vendor/angular-restmod/dist/angular-restmod-bundle.js"></script>
+
+<script type="text/javascript" src="vendor/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+
+<script type="text/javascript" src="vendor/angular-mocks/angular-mocks.js"></script>
+
+<script type="text/javascript" src="vendor/angular-touch/angular-touch.min.js"></script>
+
+<script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+<script type="text/javascript" src="vendor/angular-animate/angular-animate.min.js"></script>
+
+<script type="text/javascript" src="src/app/app.js"></script>
+
+<script type="text/javascript" src="src/app/feed/feed.module.js"></script>
+
+<script type="text/javascript" src="src/app/feed/list/feed.controller.js"></script>
+
+<script type="text/javascript" src="src/app/landing/a-landing.module.js"></script>
+
+<script type="text/javascript" src="src/app/landing/landing.controller.js"></script>
+
+<script type="text/javascript" src="src/app/route.js"></script>
+
+<script type="text/javascript" src="src/app/search/a-search.module.js"></script>
+
+<script type="text/javascript" src="src/app/search/search.controller.js"></script>
+
+<script type="text/javascript" src="src/common/directives/directives.module.js"></script>
+
+<script type="text/javascript" src="src/common/directives/show-error/show-error.directive.js"></script>
+
+<script type="text/javascript" src="src/common/fakeServer/fakeServer.js"></script>
+
+<script type="text/javascript" src="src/common/menu/a-menu.module.js"></script>
+
+<script type="text/javascript" src="src/common/menu/item-category/item-category.directive.js"></script>
+
+<script type="text/javascript" src="src/common/menu/menu-category/menu-category.directive.js"></script>
+
+<script type="text/javascript" src="src/common/resource/category.factory.js"></script>
+
+<script type="text/javascript" src="src/common/resource/config.js"></script>
+
+<script type="text/javascript" src="src/common/resource/feed.factory.js"></script>
+
+<script type="text/javascript" src="src/common/resource/post.factory.js"></script>
+
+<script type="text/javascript" src="src/common/resource/resource.module.js"></script>
+
+<script type="text/javascript" src="src/common/resource/user.factory.js"></script>
+
+<script type="text/javascript" src="src/common/rss/a-rss.module.js"></script>
+
+<script type="text/javascript" src="src/common/rss/add-category/add-category.directive.js"></script>
+
+<script type="text/javascript" src="src/common/rss/add-feed/add-feed.directive.js"></script>
+
+<script type="text/javascript" src="src/common/rss/post/a-post.module.js"></script>
+
+<script type="text/javascript" src="src/common/rss/post/card/card.directive.js"></script>
+
+<script type="text/javascript" src="src/common/rss/post/list/list.directive.js"></script>
+
+<script type="text/javascript" src="src/common/rss/post/posts/posts.directive.js"></script>
+
+<script type="text/javascript" src="src/common/rss/search/a-search.module.js"></script>
+
+<script type="text/javascript" src="src/common/rss/search/search/search.directive.js"></script>
+
+<script type="text/javascript" src="src/common/rss/tags/a-tags.module.js"></script>
+
+<script type="text/javascript" src="src/common/rss/tags/tag/tag.directive.js"></script>
+
+<script type="text/javascript" src="src/common/rss/tags/tagManager/tagManager.directive.js"></script>
+
+<script type="text/javascript" src="src/common/security/a-security.module.js"></script>
+
+<script type="text/javascript" src="src/common/security/interceptor.service.js"></script>
+
+<script type="text/javascript" src="src/common/security/security.service.js"></script>
+
+<script type="text/javascript" src="src/common/security/sign/sign.directive.js"></script>
+
+<script type="text/javascript" src="src/common/services/pubsub.service.js"></script>
+
+<script type="text/javascript" src="src/common/services/services.module.js"></script>
+
+<script type="text/javascript" src="templates-common.js"></script>
+
+<script type="text/javascript" src="templates-app.js"></script>
+
+
 </body>
 </html>
+
+<!--<div class="rss-list type-card">
+                <div class="rss-title">Habrahabr feed</div>
+                <ul>
+                    <li class="rss-post card">
+                        <div class="card-content">
+                            <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+                            <div class="content">
+                                <span class="title">25 живописных городов, которые становятся </span>
+                            </div>
+                            <span class="time">2h 35m</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>-->
